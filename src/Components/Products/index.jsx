@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useEffect } from "react";
 import "./style.css";
+import { toast } from "react-toastify";
+
 
 const Products = () => {
 
@@ -17,43 +19,56 @@ const Products = () => {
     const [providers, setProviders] = useState([]);
     const [groups, setGroups] = useState([]);
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (event) => {
 
         try {
+            event.preventDefault();
 
-            e.preDefault();
-
-            if (!imageUrl) {
-                alert("Favor inserir o caminho URL da imagem do produto!");
-                return;
-            }
-            if (!productName) {
-                alert("Favor inserir o nome do produto!");
-                return;
-            }
-            if (!cost) {
-                alert("Favor inserir o valor do produto!");
-                return;
-            }
-            if (!description) {
-                alert("Favor inserir a descrição do produto!");
-                return;
-            }
-            if (!provider) {
-                alert("Favor selecionar o fornecedor do produto!");
-                return;
-            }
-            if (!group) {
-                alert("Favor selecionar o grupo do produto!");
-                return;
+            if(!imageUrl) {
+                toast.error("Url é obrigatória", {
+                    position: toast.POSITION.TOP_CENTER,
+                    theme: "dark"
+                });
+                return
+            } else if (!productName) {
+                toast.error("Nome do produto é obrigatório", {
+                    position: toast.POSITION.TOP_CENTER,
+                    theme: "dark"
+                });
+                return
+            }else if (!cost) {
+                toast.error("Custo unitário é obrigatório", {
+                    position: toast.POSITION.TOP_CENTER,
+                    theme: "dark"
+                });
+                return
+            }else if (!description) {
+                toast.error("Descrição é obrigatória", {
+                    position: toast.POSITION.TOP_CENTER,
+                    theme: "dark"
+                });
+                return
+            }else if (!providers) {
+                toast.error("Fornecedor é obrigatório", {
+                    position: toast.POSITION.TOP_CENTER,
+                    theme: "dark"
+                });
+                return
+            }else if (!groups) {
+                toast.error("Grupo é obrigatório", {
+                    position: toast.POSITION.TOP_CENTER,
+                    theme: "dark"
+                });
+                return
             }
         
-            await fetch('http://localhost:3333/produtos',
+            await fetch("http://localhost:3333/produtos",
             {
                 headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
                 },
+                method: "POST",
                 body: JSON.stringify({
                   "imageUrl": imageUrl,
                   "productName": productName,
@@ -62,20 +77,29 @@ const Products = () => {
                   "provider": provider,
                   "group": group,
                 })
-            }); 
-            alert("Produto cadastrado com sucesso!")
+              }
+            );
+
+            toast.success("Produto cadastrado com sucesso", {
+                position: toast.POSITION.TOP_CENTER,
+                theme: "dark"
+            });
+
+            history.push("/stored");
+            
+        } catch (error) {
+            toast.error("Houve um problema no cadastro de novo produto. Estamos tentando resolver!", {
+                position: toast.POSITION.TOP_CENTER,
+                theme: "dark"
+            });
             history.push("/stored");
         }
-        catch (error) {
-            alert ("Ocorreu um problema ao cadastrar o produto!")
-            }
-            history.push("/stored");
     }
 
     useEffect(() => {
 
         async function getProvider() {
-          const result = await fetch("http://localhost:3333//fornecedores");
+          const result = await fetch("http://localhost:3333/fornecedores");
           const data = await result.json();
           setProviders(data);
         }
@@ -87,7 +111,7 @@ const Products = () => {
       useEffect(() => {
 
         async function getGroup() {
-          const result = await fetch("http://localhost:3333//categorias");
+          const result = await fetch("http://localhost:3333/categorias");
           const data = await result.json();
           setGroups(data);
         }
@@ -115,29 +139,29 @@ const Products = () => {
 
             <div className="product-data">
                 <div className="product-url">
-                    <label><input className="url-input" name="imageUrl" pattern="https://.*" type="text" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)}></input>URL da imagem*</label>
+                    <label><input className="url-input" name="imageUrl" pattern="https://.*" type="text" value={imageUrl} onChange={(event) => setImageUrl(event.target.value)}></input>URL da imagem*</label>
                 </div>
 
                 <div className="product-info">
-                    <label><input className="name-input" name="productName" type="text" value={productName} onChange={(e) => setProductName(e.target.value)}></input>Nome*</label>
-                    <label><input type="number" name="cost" value={cost} onChange={(e) => setCost(e.target.value)}></input>Custo unitário*</label>
+                    <label><input className="name-input" name="productName" type="text" value={productName} onChange={(event) => setProductName(event.target.value)}></input>Nome*</label>
+                    <label><input type="number" name="cost" value={cost} onChange={(event) => setCost(event.target.value)}></input>Custo unitário*</label>
                 </div>
 
                 <div className="product-description">
-                    <label><textarea  name="description" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>Descrição*</label>
+                    <label><textarea  name="description" value={description} onChange={(event) => setDescription(event.target.value)}></textarea>Descrição*</label>
                 </div>
             </div>
 
             <div className="product-select">
                 <label>
-                    <select name="provider" value={provider} onChange={(e) => setProvider(e.target.value)}>
+                    <select name="provider" value={provider} onChange={(event) => setProvider(event.target.value)}>
                         {providers.map(item => (<option value={item}>{item}</option>))}
                     </select>
                     Fornecedor*
                 </label>
 
                 <label>
-                    <select name="group" value={group} onChange={(e) => setGroup(e.target.value)}>
+                    <select name="group" value={group} onChange={(event) => setGroup(event.target.value)}>
                         {groups.map((item) => (<option value={item}>{item}</option>))}
                     </select>
                     Grupo*

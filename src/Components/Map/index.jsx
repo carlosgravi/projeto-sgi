@@ -4,21 +4,21 @@ import "./style.css";
 
 const Map = () => {
 
-  const [companies, setCompanies] = useState([]);
+  const [companiesList, setCompaniesList] = useState([]);
 
   useEffect(() => {
-    async function getCompanies() {
+    async function handleGetCompanies() {
       try {
         const response = await fetch("http://localhost:3333/empresas");
         const data = await response.json();
        
-        setCompanies(data);
+        setCompaniesList(data);
 
       } catch (error) {
-        alert('Houve um erro ao tentar listar os mercados. Entre em contato com suporte.')
+        alert('Houve um erro ao carregar a localização do Mercados. Entre em contato com suporte.')
       }
     }
-    getCompanies();
+    handleGetCompanies();
   }, []);
 
   return (
@@ -32,7 +32,7 @@ const Map = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
 
         {
-          companies.map(item => (
+          companiesList.map(item => (
             <Marker position={[item.latitude, item.longitude]}>
               <Popup>
                 <p>Razão Social: {item.reason}</p>

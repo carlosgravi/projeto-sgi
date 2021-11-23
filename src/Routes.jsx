@@ -2,7 +2,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Companies from "./Components/Companies";
 import Login from "./Components/Login";
 import Map from "./Components/Map";
-import Products from "./Components/Products/index";
+import Products from "./Components/Products";
 import Header from "./Components/Header";
 import StoredProducts from "./Components/Stored_Products";
 

@@ -8,15 +8,6 @@
       "provider": "Dell",
       "group": "Eletrônicos",
       "id": 2
-    },
-    {
-      "imageUrl": "https://th.bing.com/th/id/OIP.ugSzZL75ip4t_kX3nw0YBwHaHa?w=211&h=211&c=7&r=0&o=5&pid=1.7",
-      "productName": "Coca Cola 2L Zero",
-      "cost": "10.00",
-      "description": "coca",
-      "provider": "Amazon",
-      "group": "Higiene",
-      "id": 3
     }
   ],
   "empresas": [
@@ -34,36 +25,6 @@
       "latitude": "-26.5969",
       "longitude": "-43.1195",
       "id": 1
-    },
-    {
-      "reason": "Casa",
-      "fantasyName": "Teste",
-      "cnpj": "12392183983000123",
-      "mail": "carlos.gravi@outlook.com",
-      "cep": "88103215",
-      "address": "Rua Arnaldo Bonchewitz",
-      "number": "148",
-      "neighborhood": "Centro",
-      "city": "São José",
-      "complement": "Casa",
-      "latitude": "-27.620375079041104",
-      "longitude": "-4863196399860823",
-      "id": 2
-    },
-    {
-      "reason": "23123213",
-      "fantasyName": "213213",
-      "cnpj": "3123123",
-      "mail": "babi_rib@hotmail.com",
-      "cep": "88103215",
-      "address": "Rua Arnaldo Bonchewitz",
-      "number": "122",
-      "neighborhood": "Centro",
-      "city": "São José",
-      "complement": "Casa",
-      "latitude": "121",
-      "longitude": "122",
-      "id": 3
     }
   ],
   "fornecedores": [

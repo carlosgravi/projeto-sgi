@@ -16,25 +16,25 @@ const Login = () => {
         if(!email && !password) {
             toast.error("E-mail e senha são obrigatórios", {
                 position: toast.POSITION.TOP_CENTER,
-                theme: "colored"
+                theme: "dark"
             });
             return
         } else if (!email) {
             toast.error("E-mail é obrigatório", {
                 position: toast.POSITION.TOP_CENTER,
-                theme: "colored"
+                theme: "dark"
             });
             return
         }else if (!password) {
             toast.error("Senha é obrigatória", {
                 position: toast.POSITION.TOP_CENTER,
-                theme: "colored"
+                theme: "dark"
             });
             return
         } else (
             toast.success("Login realizado com sucesso", {
                 position: toast.POSITION.TOP_CENTER,
-                theme: "colored"
+                theme: "dark"
             })
         )
 

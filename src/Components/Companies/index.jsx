@@ -97,7 +97,7 @@ const Companies = () => {
                 return
             }
 
-            await fetch('http://localhost:3333/empresas',
+            await fetch("http://localhost:3333/empresas",
             {
                 headers: {
                   'Accept': 'application/json',
@@ -173,7 +173,7 @@ const Companies = () => {
                 <div className="adress-group-2">
                     <label><input name="number" type="number" value={number} onChange={(event) => setNumber(event.target.value)}></input>Número*</label>
                     <label><input name="neighborhood" type="text" value={neighborhood} onChange={(event) => setNeighborhood(event.target.value)}></input>Bairro*</label>
-                    <label><input name="city" type="text" value={city} onChange={(event) => setCity(event.target.value)}></input>city*</label>
+                    <label><input name="city" type="text" value={city} onChange={(event) => setCity(event.target.value)}></input>Cidade*</label>
                 </div>
                 <div className="adress-group-3">
                 <label><input name="complement" type="text" value={complement} onChange={(event) => setComplement(event.target.value)}></input>Complemento</label>
