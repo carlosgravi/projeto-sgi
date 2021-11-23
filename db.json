@@ -1,6 +1,47 @@
 {
-    "produtos": [],
-    "empresas": [],
-    "fornecedores": [],
-    "categorias": []
-} 
+  "produtos": [
+    {
+      "imageUrl": "https://a-static.mlcdn.com.br/1500x1500/notebook-dell-inspiron-15-3000-3501-a25p-intel-core-i3-4gb-256gb-ssd-156-led-windows-10/magazineluiza/228079200/8a14fa5828e95c1e2052dbbc5ee91e67.jpg",
+      "productName": "Notebook Dell Inspiron 15 3000",
+      "cost": "3.000",
+      "description": "Notebook Dell Inspiron 15 3000 3501-A25P - Intel Core i3 4GB 256GB SSD 15,6” LED Windows 10",
+      "provider": "Dell",
+      "group": "Eletrônicos",
+      "id": 2
+    }
+  ],
+  "empresas": [
+    {
+      "reason": "Involves Ltda",
+      "fantasyName": "DevInMarket",
+      "cnpj": "05.155522000120",
+      "mail": "involves@gmail.com",
+      "cep": "88050639",
+      "address": "Rua no centro",
+      "number": "666",
+      "neighborhood": "Centro",
+      "city": "Florianópolis",
+      "complement": "Próximo ao continente",
+      "latitude": "-26.5969",
+      "longitude": "-43.1195",
+      "id": 1
+    }
+  ],
+  "fornecedores": [
+    "Del valle",
+    "Amazon",
+    "Dell",
+    "Açougue",
+    "Direto do campo"
+  ],
+  "categorias": [
+    "Carnes",
+    "Laticínios",
+    "Higiene",
+    "Cereais e massas",
+    "Vegetais e frutas",
+    "Eletrônicos",
+    "Utensílios",
+    "Outro"
+  ]
+}

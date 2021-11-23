@@ -1,0 +1,131 @@
+.container-form-companies {
+    border: 1px solid #0071d3;
+    border-radius: 2em;
+    background-color: #0071d3;
+  
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin: 1em auto;
+  }
+  
+  .form-header h1 {
+    color: #000000;
+  }
+  
+  .container-form-companies .form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 1em;
+    width: 100%;
+  }
+  
+  .container-form-companies .form-header h1 {
+    margin: 0 1em;
+  } 
+  
+  .container-form-companies .form-header .btn-companies {
+    margin: 0 1em;
+  } 
+  
+  .container-form-companies .company-data,
+  .container-form-companies .company-address,
+  .container-form-companies .company-map {
+    width: 100%;
+  } 
+  
+  .company-contact, .company-position {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2em;
+    margin-bottom: 1em;
+    margin-left: 2em;
+  }
+  
+  .company-address {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5em;
+    margin-left: 2em;
+  }
+  
+  .address-group-1, .address-group-2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1em;
+  }
+  
+  .address-group-1 {
+    flex: 1 0 80px;
+  }
+  
+  .address-group-3 {
+    display: flex;
+    flex: 1 0 80px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1em;
+  }
+   
+  label {
+    display: flex;
+    flex: 1 0 80px;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    gap: 0.5em;
+    margin-right: 1em;
+  } 
+  
+  .btn-companies {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      background-color:rgb(226, 89, 89);
+      border-radius:28px;
+      border:1px solid rgb(226, 89, 89);
+      display:inline-block;
+      cursor:pointer;
+      color:#ffffff;
+      font-family:Arial;
+      font-size:17px;
+      font-weight: bold;
+      padding:12px 24px;
+      text-decoration:none;
+      text-shadow:1px 1px 1px #0a0a0a;
+    }
+    
+    .btn-companies:hover {
+      background-color:rgb(240, 151, 151);
+    }
+    .btn-companies:active {
+      position:relative;
+      top:1px;
+    }
+  
+    @media screen and (max-width:600px){
+      .container-form-companies {
+        display: flex;
+        width: 300px;
+      }
+  
+      .form-header{
+        display: flex;
+        justify-content: space-around;
+        margin-left: 1.5em;
+      }
+  
+      .address-group-1, .address-group-2, .address-group-3 {
+        display: flex;
+        margin-right: 2em;
+      }
+      
+    }
